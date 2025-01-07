@@ -1,14 +1,15 @@
+import { Link, type MetaFunction } from 'react-router'
 import { Layout } from '~/components/layouts/Layout'
-import type { Route } from './+types/_index'
 
-export function meta(_: Route.MetaArgs) {
-  return [{ title: 'Home' }, { name: 'description', content: 'Welcome to React Router!' }]
+export const meta: MetaFunction = () => {
+  return [{ title: 'Home' }, { name: 'description', content: 'Welcome to our app!' }]
 }
 
 export default function Home() {
   return (
     <Layout>
       <h1>Home</h1>
+      <Link to="/about">To About</Link>
     </Layout>
   )
 }
